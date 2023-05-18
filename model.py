@@ -58,17 +58,10 @@ def _preprocess_data(data):
     # ---------------------------------------------------------------
 
     # ----------- Replace this code with your own preprocessing steps --------
-    feature_1 = ['Barcelona_wind_speed','Barcelona_wind_deg','Barcelona_weather_id','Barcelona_temp_max','Barcelona_temp','Barcelona_temp_min']
-    df[feature_1].hist(figsize=(12,10));
-    
-    features_2 = ['Madrid_wind_speed','Madrid_humidity','Madrid_clouds_all','Madrid_weather_id','Madrid_pressure','Madrid_temp_max','Madrid_temp','Madrid_temp_min']
-    df[features_2].hist(figsize=(12,10));
-    
-    features_3= ['Valencia_wind_speed','Valencia_temp_max','Valencia_temp','Valencia_temp_min','Valencia_humidity']
-    df[features_3].hist(figsize=(12,10));
+    predict_vector = feature_vector_df[['Madrid_wind_speed','Bilbao_rain_1h','Valencia_wind_speed']]
     # ------------------------------------------------------------------------
 
-    return feature_1, features_2, features_3
+    return predict_vector
 
 def load_model(path_to_model:str):
     """Adapter function to load our pretrained model into memory.
